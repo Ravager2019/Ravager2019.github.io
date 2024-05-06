@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="experience.html">Experience</a>
+            <a href="skills.html">Skills</a>
+            <a href="contact.html">Contact</a>
+            <a href="projects.html">Projects</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Experience</h1>
+        <section class="section">
+            <h2>Network Project for School:</h2>
+            <p>As part of a comprehensive project, I orchestrated the establishment of an air-gapped network
+                infrastructure, comprising a central head server along with two Mini PCs and two Raspberry Pi 3b
+                devices.</p>
+            <p>Key achievements of this endeavor include:</p>
+            <ul>
+                <li>Creation of an air-gapped Plex media server, meticulously designed to operate autonomously without
+                    any external network connectivity.</li>
+                <li>Deployment of a Minecraft server and client setup, meticulously configured to function
+                    independently, devoid of any external connections, ensuring a secure and controlled gaming
+                    environment.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Computer Science</h2>
+            <p>GPA Calculator in C++</p>
+            <div class="code-window">
+                <pre><code class="language-c++">
+                #include &lt;iostream&gt;
+                #include &lt;iomanip&gt;
+
+                using namespace std;
+
+                int main()
+                {
+                    // Constants
+                    const double SEM_WEIGHT_DEFAULT = 0.425;
+                    const double FIN_WEIGHT_DEFAULT = 0.15;
+
+                    // Variables
+                    double Q1 = 0;
+                    double Q2 = 0;
+                    double Grade = 0;
+                    double SEM_WEIGHT = SEM_WEIGHT_DEFAULT;
+                    double FIN_WEIGHT = FIN_WEIGHT_DEFAULT;
+
+                    // Prompting the user for the weights of semester grades and final exam
+                    cout << "Enter the weights of the Quarter grades and Final Exam. Enter 1 to use the default values." << endl;
+                    cout << "What is the weight of the Quarter grades (default " << SEM_WEIGHT_DEFAULT << "): ";
+                    cin >> SEM_WEIGHT;
+                    if (SEM_WEIGHT == 1) {
+                        SEM_WEIGHT = SEM_WEIGHT_DEFAULT;
+                    }
+                    cout << "What is the weight of the Final Exam grade (default " << FIN_WEIGHT_DEFAULT << "): ";
+                    cin >> FIN_WEIGHT;
+                    if (FIN_WEIGHT == 1) {
+                        FIN_WEIGHT = FIN_WEIGHT_DEFAULT;
+                    }
+
+                    // Prompting the user for quarter grades
+                    cout << fixed << setprecision(2);
+                    cout << "Enter your final grade for Quarter 1: ";
+                    cin >> Q1;
+                    cout << "Enter your final grade for Quarter 2: ";
+                    cin >> Q2;
+
+                    // Calculating final grades for quarters
+                    double Q1F = Q1 * SEM_WEIGHT;
+                    double Q2F = Q2 * SEM_WEIGHT;
+                    Grade = Q1F + Q2F;
+
+                    // Outputting the user's grade without the final exam
+                    cout << "\nQuarter 1 Grade: " << Q1F << endl;
+                    cout << "Quarter 2 Grade: " << Q2F << endl;
+                    cout << "Total Grade before Final Exam: " << Grade << endl << endl;
+
+                    // Creating a table header
+                    cout << setw(12) << left << "Letter";
+                    cout << setw(15) << left << "Low" << setw(15) << left << "High" << endl;
+
+                    // Creating a separator line
+                    cout << setfill('-') << setw(42) << "" << endl;
+                    cout << setfill(' ');
+
+                    // Calculating the required final grade for each letter grade
+                    double requiredGradeLow, requiredGradeHigh;
+
+                    // A Grade
+                    requiredGradeLow = (90.0 - Grade) / FIN_WEIGHT;
+                    requiredGradeHigh = (100.0 - Grade) / FIN_WEIGHT;
+                    cout << setw(12) << left << "A";
+                    if (requiredGradeLow >= 0) {
+                        cout << setw(15) << left << fixed << setprecision(2) << 0.0;
+                    } else {
+                        cout << setw(15) << left << "Unattainable";
+                    }
+                    if (requiredGradeHigh >= 0) {
+                        cout << setw(15) << left << fixed << setprecision(2) << requiredGradeHigh;
+                    } else {
+                        cout << setw(15) << left << "Unattainable";
+                    }
+                    cout << endl;
+
+                    // B Grade
+                    requiredGradeLow = (80.0 - Grade) / FIN_WEIGHT;
+                    requiredGradeHigh = (89.9 - Grade) / FIN_WEIGHT;
+                    cout << setw(12) << left << "B";
+                    if (requiredGradeLow >= 0) {
+                        cout << setw(15) << left << fixed << setprecision(2) << requiredGradeLow;
+                    } else {
+                        cout << setw(15) << left << "Unattainable";
+                    }
+                    if (requiredGradeHigh >= 0) {
+                        cout << setw(15) << left << fixed << setprecision(2) << requiredGradeHigh;
+                    } else {
+                        cout << setw(15) << left << "Unattainable";
+                    }
+                    cout << endl;
+
+                    // C Grade
+                    requiredGradeLow = (70.0 - Grade) / FIN_WEIGHT;
+                    requiredGradeHigh = (79.9 - Grade) / FIN_WEIGHT;
+                    cout << setw(12) << left << "C";
+                    if (requiredGradeLow >= 0) {
+                        cout << setw(15) << left << fixed << setprecision(2) << requiredGradeLow;
+                    } else {
+                        cout << setw(15) << left << "Unattainable";
+                    }
+                    if (requiredGradeHigh >= 0) {
+                        cout << setw(15) << left << fixed << setprecision(2) << requiredGradeHigh;
+                    } else {
+                        cout << setw(15) << left << "Unattainable";
+                    }
+                    cout << endl;
+
+                    // D Grade
+                    requiredGradeLow = (60.0 - Grade) / FIN_WEIGHT;
+                    requiredGradeHigh = (69.9 - Grade) / FIN_WEIGHT;
+                    cout << setw(12) << left << "D";
+                    if (requiredGradeLow >= 0) {
+                        cout << setw(15) << left << fixed << setprecision(2) << requiredGradeLow;
+                    } else {
+                        cout << setw(15) << left << "Unattainable";
+                    }
+                    if (requiredGradeHigh >= 0) {
+                        cout << setw(15) << left << fixed << setprecision(2) << requiredGradeHigh;
+                    } else {
+                        cout << setw(15) << left << "Unattainable";
+                    }
+                    cout << endl;
+
+                    // F Grade
+                    requiredGradeLow = (0.0 - Grade) / FIN_WEIGHT;
+                    requiredGradeHigh = (59.9 - Grade) / FIN_WEIGHT;
+                    cout << setw(12) << left << "F";
+                    if (requiredGradeLow >= 0) {
+                        cout << setw(15) << left << fixed << setprecision(2) << requiredGradeLow;
+                    } else {
+                        cout << setw(15) << left << "Unattainable";
+                    }
+                    if (requiredGradeHigh >= 0) {
+                        cout << setw(15) << left << fixed << setprecision(2) << requiredGradeHigh;
+                    } else {
+                        cout << setw(15) << left << "Unattainable";
+                    }
+                    cout << endl;
+
+                    return 0;
+                }
+
+            </code></pre>
+            </div>
+            <p>Brick Breaker in Java(One file)</p>
+            <div class="code-window">
+            <pre><code class="language-java">
+                import javax.swing.*;
+                import java.awt.*;
+                import java.awt.event.*;
+                import java.util.Random;
+                import java.awt.image.BufferedImage;
+                import java.io.File;
+                import java.io.IOException;
+                import javax.imageio.ImageIO;
+
+                public class Main extends JPanel implements ActionListener {
+                    private BufferedImage brickImage, ballImage, ballImage2, paddleImage, backgroundImage;
+                    private BufferedImage f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10;
+                    private final int WIDTH = 855;
+                    private final int HEIGHT = 600;
+                    private final int PADDLE_WIDTH = 150;
+                    private final int PADDLE_HEIGHT = 30;
+                    private final int BALL_DIAMETER = 20;
+                    private final int BRICK_WIDTH = 50;
+                    private final int BRICK_HEIGHT = 20;
+                    private final int BRICK_ROWS = 7;
+                    private final int NUM_BRICKS = BRICK_ROWS * 16 + BRICK_ROWS;
+                    private double currentSpeed, ballXSpeed, ballYSpeed;
+                    private Timer timer;
+                    private int paddleX, ballX, ballY, score, penalty;
+                    private double waitTimer = 100;
+                    private boolean left, right;
+                    private boolean menu = false;
+                    private Rectangle paddle;
+                    private Rectangle[] bricks;
+                    private final int minSpeed = 8;
+                    private final int maxSpeed = 9;
+                    private final int paddleSpeed = 8;
+                    private JButton button;
+                    private int currentGifFrame = 0;
+                    private int gifTimer = 0;
+                    private int fallingCircleX = -50, fallingCircleY = 0;
+                    private int fallingCircleSpeed = 1;
+                    private boolean powerup = false;
+                    private boolean powerupVisible = false;
+                    private int powerupDuration = 0;
+                    private int visibleScore = 0;
+
+                    public Main() {
+                        try {
+                            brickImage = ImageIO.read(new File("src/main/textures/brick.png"));
+                            paddleImage = ImageIO.read(new File("src/main/textures/metal.jpg"));
+                            ballImage = ImageIO.read(new File("src/main/textures/ball.png"));
+                            ballImage2 = ImageIO.read(new File("src/main/textures/ball2.png"));
+                            backgroundImage = ImageIO.read(new File("src/main/textures/space.jpg"));
+                            f0 = ImageIO.read(new File("src/main/textures/star/f0.png"));
+                            f1 = ImageIO.read(new File("src/main/textures/star/f1.png"));
+                            f2 = ImageIO.read(new File("src/main/textures/star/f2.png"));
+                            f3 = ImageIO.read(new File("src/main/textures/star/f3.png"));
+                            f4 = ImageIO.read(new File("src/main/textures/star/f4.png"));
+                            f5 = ImageIO.read(new File("src/main/textures/star/f5.png"));
+                            f6 = ImageIO.read(new File("src/main/textures/star/f6.png"));
+                            f7 = ImageIO.read(new File("src/main/textures/star/f7.png"));
+                            f8 = ImageIO.read(new File("src/main/textures/star/f8.png"));
+                            f9 = ImageIO.read(new File("src/main/textures/star/f9.png"));
+                            f10 = ImageIO.read(new File("src/main/textures/star/f10.png"));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                        button = new JButton("Start");
+                        button.setBounds(WIDTH / 2 - 50, HEIGHT / 2 - 25, 100, 50);
+                        button.addActionListener(this);
+                        add(button);
+
+                        setPreferredSize(new Dimension(WIDTH, HEIGHT));
+                        paddleX = WIDTH / 2 - PADDLE_WIDTH / 2;
+                        paddle = new Rectangle(paddleX, HEIGHT - PADDLE_HEIGHT - 50, PADDLE_WIDTH, PADDLE_HEIGHT);
+                        ballX = WIDTH / 2 - BALL_DIAMETER / 2;
+                        ballY = HEIGHT / 2 - BALL_DIAMETER / 2;
+                        ballXSpeed = 0;
+                        ballYSpeed = -2;
+
+                        score = 0;
+                        penalty = 0;
+                        bricks = new Rectangle[NUM_BRICKS];
+                        generateBricks();
+                        timer = new Timer(10, this);
+                        timer.start();
+
+                        addKeyListener(new KeyAdapter() {
+                            @Override
+                            public void keyPressed(KeyEvent e) {
+                                int key = e.getKeyCode();
+                                if (key == KeyEvent.VK_LEFT) {
+                                    left = true;
+                                } else if (key == KeyEvent.VK_RIGHT) {
+                                    right = true;
+                                }
+                            }
+
+                            @Override
+                            public void keyReleased(KeyEvent e) {
+                                int key = e.getKeyCode();
+                                if (key == KeyEvent.VK_LEFT) {
+                                    left = false;
+                                } else if (key == KeyEvent.VK_RIGHT) {
+                                    right = false;
+                                }
+                            }
+                        });
+
+                        setFocusable(true);
+                    }
+
+                    public void spawnFallingCircle(int x, int y) {
+                        powerupVisible = true;
+                        fallingCircleX = x;
+                        fallingCircleY = y;
+                    }
+
+                    public void moveFallingCircle() {
+                        fallingCircleY += fallingCircleSpeed;
+                    }
+
+                    public void generateBricks() {
+                        int xStart = -25;
+                        int xPos = xStart;
+                        int yPos = 50;
+                        for (int i = 0; i < NUM_BRICKS; i++) {
+                            bricks[i] = new Rectangle(xPos, yPos, BRICK_WIDTH, BRICK_HEIGHT);
+                            xPos += BRICK_WIDTH + 2;
+                            if (xPos >= (WIDTH - BRICK_WIDTH / 2) + 25) {
+                                if (xStart == 0) {
+                                    xStart = -25;
+                                } else {
+                                    xStart = 0;
+                                }
+                                xPos = xStart;
+                                yPos += BRICK_HEIGHT + 2;
+                            }
+                        }
+                    }
+
+                    @Override
+                    protected void paintComponent(Graphics g) {
+                        super.paintComponent(g);
+                        g.drawImage(backgroundImage, 0, 0, WIDTH, HEIGHT, null);
+
+                        g.drawImage(paddleImage, paddle.x, paddle.y, paddle.width, paddle.height, null);
+                        if (powerup == false) {
+                            if (waitTimer % 33 < waitTimer / 3) {
+                                g.drawImage(ballImage, ballX, ballY, BALL_DIAMETER, BALL_DIAMETER, null);
+                            }
+                        } else {
+                            g.drawImage(ballImage2, ballX, ballY, BALL_DIAMETER, BALL_DIAMETER, null);
+                        }
+                        for (Rectangle brick : bricks) {
+                            if (brick != null) {
+                                g.drawImage(brickImage, brick.x, brick.y, BRICK_WIDTH, BRICK_HEIGHT, null);
+                            }
+                        }
+                        g.setColor(Color.WHITE);
+                        g.setFont(new Font("Arial", Font.BOLD, 20));
+                        g.drawString("Score: " + (visibleScore), 20, 30);
+                        BufferedImage currentFrame = switch (currentGifFrame) {
+                            case 0 -> f0;
+                            case 1 -> f1;
+                            case 2 -> f2;
+                            case 3 -> f3;
+                            case 4 -> f4;
+                            case 5 -> f5;
+                            case 6 -> f6;
+                            case 7 -> f7;
+                            case 8 -> f8;
+                            case 9 -> f9;
+                            case 10 -> f10;
+                            default -> f0;
+                        };
+                        if (powerupVisible) {
+                            g.drawImage(currentFrame, fallingCircleX, fallingCircleY, 40, 40, null);
+                        }
+                    }
+
+                    public void actionPerformed(ActionEvent e) {
+                        if (visibleScore < score + penalty) {
+                            visibleScore++;
+                        } else if (visibleScore > score + penalty) {
+                            visibleScore -= 1;
+                        }
+                        if (e.getSource() == button) {
+                            button.setVisible(false);
+                            menu = true;
+                        }
+                        if (menu) {
+                            moveFallingCircle();
+                            move();
+                            checkCollisions();
+                            if (powerup) {
+                                powerupDuration++;
+                                if (powerupDuration >= 500) {
+                                    powerup = false;
+                                    powerupDuration = 0;
+                                }
+                            }
+                            repaint();
+                        }
+                    }
+
+                    public int getRandomNumber(int min, int max) {
+                        Random random = new Random();
+                        int randomNum = random.nextInt(max) + 1 + min;
+                        return randomNum;
+                    }
+
+                    public void move() {
+                        if (gifTimer >= 5) {
+                            if (currentGifFrame < 10) {
+                                currentGifFrame += 1;
+                                gifTimer = 0;
+                            } else {
+                                currentGifFrame = 0;
+                            }
+                        } else {
+                            gifTimer++;
+                        }
+                        if (waitTimer < 0) {
+                            if (ballYSpeed < 1 && ballYSpeed > -1) {
+                                ballYSpeed += 5;
+                            }
+                            if (currentSpeed > -minSpeed && currentSpeed < minSpeed) {
+                                ballXSpeed = ballXSpeed * 1.1;
+                                ballYSpeed = ballYSpeed * 1.1;
+                            } else if (currentSpeed > maxSpeed || currentSpeed < -maxSpeed) {
+                                ballXSpeed = ballXSpeed * 0.9;
+                                ballYSpeed = ballYSpeed * 0.9;
+                            }
+                            ballX += ballXSpeed;
+                            ballY += ballYSpeed;
+                            double speed = Math.sqrt(Math.pow(ballXSpeed, 2) + Math.pow(ballYSpeed, 2));
+                            currentSpeed = speed;
+                            if (ballX <= 0 || ballX >= WIDTH - BALL_DIAMETER) {
+                                ballXSpeed = -ballXSpeed;
+                            }
+                            if (ballY <= 0) {
+                                ballYSpeed = -ballYSpeed;
+                            }
+                            if (ballY >= HEIGHT - BALL_DIAMETER) {
+                                ballX = WIDTH / 2 - BALL_DIAMETER / 2;
+                                ballY = HEIGHT / 2 - BALL_DIAMETER / 2;
+                                setBallAngle(-1 * (getRandomNumber(30, 150)));
+                                penalty -= 5;
+                                waitTimer = 100;
+                            }
+                        } else {
+                            waitTimer -= 1;
+                        }
+                    }
+
+                    public double getAngle() {
+                        double angledg = Math.toDegrees(Math.atan2(ballYSpeed, ballXSpeed));
+                        return angledg;
+                    }
+
+                    public void setBallAngle(double angleDegrees) {
+                        double angleRadians = Math.toRadians(angleDegrees);
+                        ballXSpeed = (currentSpeed * Math.cos(angleRadians));
+                        ballYSpeed = (currentSpeed * Math.sin(angleRadians));
+                        ballXSpeed += 0.2;
+                        ballYSpeed += 0.2;
+                        if (currentSpeed < 4) {
+                            ballXSpeed += 1.0;
+                            ballYSpeed += 1.0;
+                        }
+                    }
+
+                    public void checkCollisions() {
+                        Rectangle ballRect = new Rectangle(ballX, ballY, BALL_DIAMETER, BALL_DIAMETER);
+                        if (ballRect.intersects(paddle)) {
+                            if (ballYSpeed > 0) {
+                                ballYSpeed = -ballYSpeed;
+                            }
+                            int paddleCenter = paddleX + paddle.width / 2;
+                            setBallAngle(getAngle() + ((ballX - paddleCenter) / 2));
+                            if (score % (NUM_BRICKS * 10) == 0) {
+                                generateBricks();
+                            }
+                        }
+                        Rectangle powerRect = new Rectangle(fallingCircleX, fallingCircleY, 50, 50);
+                        if (powerRect.intersects(paddle)) {
+                            powerup = true;
+                            powerupVisible = false;
+                        }
+                        for (int i = 0; i < bricks.length; i++) {
+                            Rectangle brick = bricks[i];
+                            if (brick != null && ballRect.intersects(brick)) {
+                                if (powerup == false) {
+                                    boolean fromTopOrBottom = ballX + BALL_DIAMETER > brick.x && ballX - BALL_DIAMETER < brick.x + brick.width;
+                                    boolean fromLeftOrRight = ballY + (0.5 * BALL_DIAMETER) > brick.y && ballY - (0.5 * BALL_DIAMETER) < brick.y;
+                                    int percentChance = getRandomNumber(1, 20);
+                                    if (percentChance < 3) {
+                                        int circleX = brick.x + brick.width / 2;
+                                        int circleY = brick.y + brick.height / 2;
+                                        spawnFallingCircle(circleX, circleY);
+                                    }
+                                    if (fromTopOrBottom) {
+                                        ballYSpeed = -ballYSpeed;
+                                    }
+                                    if (fromLeftOrRight) {
+                                        ballXSpeed = -ballXSpeed;
+                                    }
+                                }
+                                brick.setBounds(0, 0, 0, 0);
+                                score += 10;
+                                bricks[i] = null;
+                                break;
+                            }
+                        }
+                    }
+
+                    public static void main(String[] args) {
+                        SwingUtilities.invokeLater(() -> {
+                            JFrame frame = new JFrame("Brick Breaker");
+                            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                            frame.getContentPane().add(new Main());
+                            frame.pack();
+                            frame.setLocationRelativeTo(null);
+                            frame.setVisible(true);
+                        });
+                    }
+                }
+
+            </code></pre>
+            </div>
+        </section>
+
+
+        </section>
+
+        <section class="section">
+            <h2>Homelab:</h2>
+            <p>Dell PowerEdge R720 running ESXI 6.5</p>
+            <p>In my homelab setup, I run various services to further my skills and knowledge in cybersecurity and IT:
+            </p>
+            <ul>
+                <li>Media Server using Plex</li>
+                <li>Game Server for hosting game servers</li>
+                <li>Bitwarden for password management</li>
+                <li>Run Kali Linux VM for penetration testing and ethical hacking</li>
+            </ul>
+        </section>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js">
+</script>
+<script src="script.js"></script>
+
+</body>
+
+</html>

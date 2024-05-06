@@ -1,0 +1,169 @@
+/* Prism.js styling */
+pre[class*="language-"] {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  overflow: auto;
+}
+
+code[class*="language-"] {
+  display: block;
+  font-size: 0.9em;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+/* Token styles */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #5c6370; /* Comment color */
+}
+
+.token.punctuation {
+  color: #abb2bf; /* Punctuation color */
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.operator,
+.token.boolean,
+.token.number {
+  color: #d19a66; /* Operator, Boolean, Number color */
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #e06c75; /* Property, Tag, Constant, Symbol, Deleted color */
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #98c379; /* Selector, Attribute Name, String, Char, Builtin, Inserted color */
+}
+
+.token.function,
+.token.class-name {
+  color: #61afef; /* Function, Class Name color */
+}
+
+.token.keyword,
+.token.control,
+.token.directive,
+.token.unit {
+  color: #c678dd; /* Keyword, Control, Directive, Unit color */
+}
+
+.token.regex,
+.token.variable {
+  color: #56b6c2; /* Regex, Variable color */
+}
+
+/* Your existing styles */
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #282c34; /* Dark background color */
+  color: #abb2bf; /* Default text color */
+}
+
+.container {
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  /* Dark background color */
+  color: #e6e6e6;
+  /* Light text color */
+}
+
+.container {
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+header {
+  background-color: #1f1f1f;
+  /* Darker background color for header */
+  color: #e6e6e6;
+  /* Light text color for header */
+  padding: 10px 0;
+  text-align: center;
+}
+
+header nav {
+  display: inline-block;
+}
+
+header nav a {
+  color: #e6e6e6;
+  /* Light text color for links */
+  text-decoration: none;
+  margin: 0 15px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+header nav a:hover {
+  background-color: #3b3b3b;
+  /* Slightly lighter color on hover */
+}
+
+h1,
+h2,
+h3 {
+  color: #e6e6e6;
+  /* Light text color for headings */
+}
+
+p {
+  margin: 10px 0;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.code-window {
+  width: 100%;
+  /* Set the width of the code window */
+  height: 300px;
+  /* Set the height of the code window */
+  overflow: auto;
+  /* Add scrollbars when content overflows */
+  border: 1px solid #ccc;
+  /* Add a border for visual separation */
+  padding: 10px;
+  /* Add some padding for aesthetics */
+}
