@@ -100,7 +100,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #1a1a1a;
+  background-color: #1f1f1f;
   /* Dark background color */
   color: #e6e6e6;
   /* Light text color */
@@ -113,7 +113,7 @@ body {
 }
 
 header {
-  background-color: #1f1f1f;
+  background-color: #1a1a1a;
   /* Darker background color for header */
   color: #e6e6e6;
   /* Light text color for header */
