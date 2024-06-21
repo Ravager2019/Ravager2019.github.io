@@ -1,7 +1,7 @@
 /* Prism.js styling */
 pre[class*="language-"] {
-  margin: 0;
-  padding: 0;
+  margin: 10;
+  padding: 10;
   white-space: pre;
   overflow: auto;
 }
@@ -71,7 +71,7 @@ code[class*="language-"] {
 
 /* Your existing styles */
 html {
-  height: 100%;
+  height:100%;
   width: 100%;
 }
 
@@ -156,7 +156,10 @@ p {
 }
 
 .code-window {
-  width: 100%;
+  max-width: 90%;
+  margin: 20px auto;
+  padding: 0 20px;
+  width: 80%;
   /* Set the width of the code window */
   height: 300px;
   /* Set the height of the code window */
@@ -164,6 +167,4 @@ p {
   /* Add scrollbars when content overflows */
   border: 1px solid #ccc;
   /* Add a border for visual separation */
-  padding: 10px;
-  /* Add some padding for aesthetics */
 }
