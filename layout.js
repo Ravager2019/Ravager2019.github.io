@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   const header = `\
     <header>
       <nav>
@@ -16,6 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
       <p>&copy; 2024 Tanner Hardman</p>
     </footer>`;
 
-  document.body.insertAdjacentHTML('afterbegin', header);
-  document.body.insertAdjacentHTML('beforeend', footer);
+  document.body.insertAdjacentHTML("afterbegin", header);
+  document.body.insertAdjacentHTML("beforeend", footer);
 });
