@@ -1,7 +1,7 @@
 /* Prism.js styling */
 pre[class*="language-"] {
-  margin: 10;
-  padding: 10;
+  margin: 10px;
+  padding: 10px;
   white-space: pre;
   overflow: auto;
 }
