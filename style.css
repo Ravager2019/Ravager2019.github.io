@@ -168,3 +168,10 @@ p {
   border: 1px solid #ccc;
   /* Add a border for visual separation */
 }
+footer {
+  background-color: #1a1a1a;
+  color: #e6e6e6;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 40px;
+}
